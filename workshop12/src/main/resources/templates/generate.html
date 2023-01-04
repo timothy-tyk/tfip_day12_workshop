@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Workshop 12</title>
+  </head>
+  <body>
+    <h1>Generate</h1>
+
+    <div>
+      <h1>How many numbers do you wish to generate?</h1>
+    </div>
+    <div>
+      <!-- action="#" means void, i.e use thymeleaf's action instead of html form's action-->
+      <form
+        action="#"
+        th:action="@{/rand/generate}"
+        th:object="${generateObj}"
+        method="post"
+      >
+        <input type="text" th:field="${generateObj.numberValue}" />
+        <input type="submit" value="Generate" />
+      </form>
+      <br />
+    </div>
+  </body>
+</html>
